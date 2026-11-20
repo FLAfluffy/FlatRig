@@ -1,0 +1,37 @@
+{
+  "vts": {
+    "host": "127.0.0.1",
+    "port": 8001,
+    "plugin_name": "FlatRig Bridge",
+    "plugin_developer": "FLA_fluffy",
+    "token_file": ".vts_token.json",
+    "source": "live2d",
+    "poll_hz": 30,
+    "request_timeout_sec": 2.0
+  },
+  "osc": {
+    "host": "127.0.0.1",
+    "port": 9000,
+    "listen_enabled": true,
+    "listen_port": 9001,
+    "address_prefix": "/avatar/parameters/"
+  },
+  "mapping": {
+    "params_file": "params.example.json",
+    "max_phase": 2,
+    "quantize": true,
+    "deadband": 0.00787,
+    "resend_interval_sec": 2.0,
+    "ema_alpha": 0.6,
+    "stale_timeout_sec": 1.5
+  },
+  "logging": {
+    "level": "INFO",
+    "stats_interval_sec": 1.0
+  },
+  "hands": {
+    "enabled": true,
+    "swap": false,
+    "hold_sec": 0.4
+  }
+}

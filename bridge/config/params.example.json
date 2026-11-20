@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "_comment": "ブリッジ(bridge)とUnityエディタ拡張の両方が読む『唯一の正』。変更するときは docs/SPEC.md 第3章も更新すること。",
+  "avatar_param_prefix": "FR_",
+  "params": [
+    { "avatar": "FR_AngleX",     "vts": "ParamAngleX",     "mode": "signed",   "src_min": -30, "src_max": 30, "synced": true, "bits": 8, "phase": 1 },
+    { "avatar": "FR_AngleY",     "vts": "ParamAngleY",     "mode": "signed",   "src_min": -30, "src_max": 30, "synced": true, "bits": 8, "phase": 1 },
+    { "avatar": "FR_EyeLOpen",   "vts": "ParamEyeLOpen",   "mode": "unsigned", "src_min": 0,   "src_max": 1,  "synced": true, "bits": 8, "phase": 1 },
+    { "avatar": "FR_EyeROpen",   "vts": "ParamEyeROpen",   "mode": "unsigned", "src_min": 0,   "src_max": 1,  "synced": true, "bits": 8, "phase": 1 },
+    { "avatar": "FR_MouthOpenY", "vts": "ParamMouthOpenY", "vts_aliases": ["ParamMouthOpen"], "mode": "unsigned", "src_min": 0, "src_max": 1, "synced": true, "bits": 8, "phase": 1 },
+
+    { "avatar": "FR_AngleZ",     "vts": "ParamAngleZ",     "mode": "signed",   "src_min": -30, "src_max": 30, "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_EyeBallX",   "vts": "ParamEyeBallX",   "mode": "signed",   "src_min": -1,  "src_max": 1,  "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_EyeBallY",   "vts": "ParamEyeBallY",   "mode": "signed",   "src_min": -1,  "src_max": 1,  "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_BrowLY",     "vts": "ParamBrowLY",     "mode": "signed",   "src_min": -1,  "src_max": 1,  "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_BrowRY",     "vts": "ParamBrowRY",     "mode": "signed",   "src_min": -1,  "src_max": 1,  "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_MouthForm",  "vts": "ParamMouthForm",  "mode": "signed",   "src_min": -1,  "src_max": 1,  "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_BodyAngleX", "vts": "ParamBodyAngleX", "mode": "signed",   "src_min": -10, "src_max": 10, "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_BodyAngleY", "vts": "ParamBodyAngleY", "mode": "signed",   "src_min": -10, "src_max": 10, "synced": true, "bits": 8, "phase": 2 },
+    { "avatar": "FR_BodyAngleZ", "vts": "ParamBodyAngleZ", "mode": "signed",   "src_min": -10, "src_max": 10, "synced": true, "bits": 8, "phase": 2 }
+  ],
+  "flags": [
+    { "avatar": "FR_Active", "type": "bool", "sent_by": "bridge",      "synced": true, "bits": 1, "note": "ブリッジ稼働中は true。false の間、アバターはアイドル動作に切り替える" },
+    { "avatar": "FR_Enable", "type": "bool", "sent_by": "avatar_menu", "synced": true, "bits": 1, "note": "Expressionメニューのトグル。false なら本機能全体を無効化" },
+    { "avatar": "FR_Expr",   "type": "int",  "sent_by": "avatar_menu", "synced": true, "bits": 8, "note": "表情の番号(0=通常・ジェスチャーに従う、1〜15=PSD ツールで作った表情)。Expressionメニューの「表情」のトグルで設定。表情の無いアバターでは何もしない" },
+    { "avatar": "FR_AutoBlink", "type": "bool", "sent_by": "avatar_menu", "synced": true, "bits": 1, "note": "Expressionメニューの「自動まばたき」のトグル。true の間、トラッキング中もトラッキングの目の開閉を使わず、自動のまばたき(10 秒の中で不規則に 3 回)を再生する" }
+  ]
+}

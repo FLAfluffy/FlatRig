@@ -1,0 +1,11 @@
+{
+  "name": "dev.flatrig.editor",
+  "displayName": "FlatRig Editor Tools",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "Editor tools that build a flat layered avatar (mesh, bones, atlas) from layers.json for VRChat.",
+  "license": "MIT",
+  "author": {
+    "name": "FLA_fluffy"
+  }
+}

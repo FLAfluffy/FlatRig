@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flatrig-bridge"
+version = "1.0.0"
+description = "FlatRig Bridge: VTube Studio のパラメータ値を VRChat の OSC へ中継する常駐ツール"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "websockets>=12",
+    "python-osc>=1.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.5",
+]
+# tools/make_placeholder_layers.py, tools/psd_to_layers.py 用
+tools = [
+    "pillow>=10",
+    "psd-tools>=1.10",
+]
+# 配布用 exe のビルド(packaging/build.py)
+build = [
+    "pyinstaller>=6",
+    "markdown-it-py>=3",  # アバター作成ガイドを HTML にする
+]
+
+[project.scripts]
+flatrig-bridge = "flatrig_bridge.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+flatrig_bridge = ["assets/*.ico"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]

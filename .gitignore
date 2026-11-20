@@ -1,0 +1,86 @@
+# 認証トークン(VTS) — 絶対にコミットしない
+.vts_token.json
+*.token
+
+# 実設定(example だけをコミットする)
+bridge/config/settings.json
+bridge/config/params.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Unity
+unity/**/Library/
+unity/**/Temp/
+unity/**/Logs/
+unity/**/obj/
+unity/**/UserSettings/
+unity/**/*.csproj
+unity/**/*.sln
+
+# 素材(権利確認前の素材・生成物はコミットしない。必要なら別途管理)
+art/private/
+# PSD の書き出し先(FlatRigPSD.exe / psd_to_layers.py auto の既定。素材の画像が入る)
+art/**/*_FlatRig/
+placeholder/
+*.psd
+*.clip
+*.kra
+
+# Live2D 形式 — ガードレール G2/G4(置いてはいけない)
+*.moc3
+*.model3.json
+*.cmo3
+*.can3
+*.vtube.json
+
+# 追加(2026-10-19)
+*.py[cod]
+vts_params_dump.json
+unity-package/**/obj/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# VCC の Unity プロジェクト(キャッシュと VCC が復元するパッケージは除外)
+FlatRig_VCCProj/**/Library/
+FlatRig_VCCProj/**/Temp/
+FlatRig_VCCProj/**/Logs/
+FlatRig_VCCProj/**/obj/
+FlatRig_VCCProj/**/UserSettings/
+FlatRig_VCCProj/**/*.csproj
+FlatRig_VCCProj/**/*.sln
+FlatRig_VCCProj/*/Packages/*/
+# 生成物(素材から作るのでコミットしない。実素材の権利保護のため)
+FlatRig_VCCProj/**/Assets/FlatRig/Generated/
+FlatRig_VCCProj/**/Assets/FlatRig/Generated.meta
+
+# 常駐アプリ(P1e)の画面設定とログ
+bridge/config/ui.json
+bridge/logs/
+logs/
+
+# 公開しないローカルデータ(2026-11-21)
+# 試作・動作確認用の絵と、その書き出し物・対応表(mapping.json / layers.json / psd_layers.txt)
+art/
+# 開発用の Unity プロジェクト(VCC の設定・SDK・試作アバターを含む)
+FlatRig_VCCProj/
+# 素材判断の実際の記録(第三者の素材名・規約の抜粋を含む)。公開するのは docs/MATERIAL_DECISION.md の雛形だけ
+docs/private/
+*.log
+
+# Claude 用・開発用の文書(公開しない。2026-11-21)
+# 公開するのは利用者向けの docs/AVATAR_GUIDE.md だけ
+CLAUDE.md
+**/CLAUDE.md
+.claude/
+docs/*
+!docs/AVATAR_GUIDE.md
