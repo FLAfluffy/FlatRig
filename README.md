@@ -6,6 +6,9 @@
 - **FlatRig Editor Tools**(Unity): 書き出した素材から、メッシュ・アニメーション・VRChat の Expression Menu までを作ります
 - **FlatRig Bridge**: VTube Studio のトラッキングの値を、VRChat の OSC へ送ります(通信は同じ PC の中だけ)
 
+boothでも配布中！
+https://fumofula.booth.pm/items/9192684
+
 ## ダウンロード
 
 [Releases](../../releases) から `FlatRig-<バージョン>.zip` をダウンロードして展開してください。
